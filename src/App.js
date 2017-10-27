@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import * as firebase from 'firebase';
 import './App.css';
+import Room from './components/Room';
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyBpGsPJcfsHiSKgI-JTKHsWfLF7ql8XcpI",
+  authDomain: "prattle-bde0b.firebaseapp.com",
+  databaseURL: "https://prattle-bde0b.firebaseio.com",
+  projectId: "prattle-bde0b",
+  storageBucket: "prattle-bde0b.appspot.com",
+  messagingSenderId: "891177641423"
+};
+firebase.initializeApp(config);
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Room firebase={firebase}></Room>
+
       </div>
     );
   }

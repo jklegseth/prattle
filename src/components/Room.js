@@ -15,7 +15,6 @@ class Room extends Component {
   }
 
   componentDidMount() {
-    console.log(this.roomsRef);
     this.roomsRef.on('child_added', snapshot => {
       const room = Object.assign(snapshot.val(), { key: snapshot.key });
       this.setState({
@@ -71,7 +70,11 @@ class Room extends Component {
         </form>
         {
           this.state.rooms.map(room =>
-            <li key={room.key}>
+            <li
+              key={room.key}
+              onClick={() => this.props.setActiveRoom(room.key)}
+              className={'room-list-item' + (this.props.activeRoom === room.key ? ' active' : '')}
+            >
               {room.name}
             </li>
           )

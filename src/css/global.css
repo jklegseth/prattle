@@ -1,0 +1,16 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  /* makes sure our HTML takes up 100% of the browser windows */
+  font-size: 100$;
+}
+
+body {
+  font-family: 'Open Sans';
+  /* sets our font to Open Sans typeface*/
+  min-height: 100%;
+  /* says the height of the body must be at least 100% of window */
+}

@@ -35,30 +35,30 @@ class App extends Component {
 
   setActiveRoom(roomId) {
     this.setState({
-      activeRoom: roomId,
-      user: false
+      activeRoom: roomId
     });
   }
 
   render() {
     return (
-      <div className="App">
+      <div className={'App' + (this.state.user ? ' logged-in' : ' logged-out')}>
         <User
           firebase={firebase}
           setUser={(isLoggedIn) => this.setUser(isLoggedIn)}
           user={this.state.user}
         ></User>
-        <Room
-          firebase={firebase}
-          activeRoom={this.state.activeRoom}
-          setActiveRoom={(roomId) => this.setActiveRoom(roomId)}
-        ></Room>
-        <Message
-          firebase={firebase}
-          activeRoom={this.state.activeRoom}
-          user={this.state.user}
-        ></Message>
-
+      <div className="chatroom-container">
+          <Room
+            firebase={firebase}
+            activeRoom={this.state.activeRoom}
+            setActiveRoom={(roomId) => this.setActiveRoom(roomId)}
+          ></Room>
+          <Message
+            firebase={firebase}
+            activeRoom={this.state.activeRoom}
+            user={this.state.user}
+          ></Message>
+        </div>
       </div>
     );
   }

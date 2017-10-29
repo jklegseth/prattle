@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Firebase from './../modules/Firebase';
 
 class Message extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class Message extends Component {
       messageError: ''
     });
 
-    this.messagesRef = this.props.firebase.database().ref('messages');
+    this.messagesRef = Firebase.database().ref('messages');
+    console.log(Firebase);
   }
 
   listMessages = (snapshot) => {
@@ -52,7 +54,7 @@ class Message extends Component {
       });
     }
     this.messagesRef.push({
-      submittedAt: this.props.firebase.database.ServerValue.TIMESTAMP,
+      submittedAt: Firebase.database.ServerValue.TIMESTAMP,
       username: this.props.user.displayName,
       content: messageText,
       roomId: this.props.activeRoom

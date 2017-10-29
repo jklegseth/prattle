@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import Firebase from './../modules/Firebase';
 
 class User extends Component {
-
   componentDidMount() {
-    this.props.firebase.auth().onAuthStateChanged(user => {
+    Firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.props.setUser(user);
       } else {
@@ -13,12 +13,12 @@ class User extends Component {
   }
 
   login() {
-    const provider = new this.props.firebase.auth.GoogleAuthProvider();
-    this.props.firebase.auth().signInWithPopup(provider);
+    const provider = new Firebase.auth.GoogleAuthProvider();
+    Firebase.auth().signInWithPopup(provider);
   }
 
   logout() {
-    this.props.firebase.auth().signOut();
+    Firebase.auth().signOut();
   }
 
   render() {
@@ -32,7 +32,6 @@ class User extends Component {
             </div>
           )
         }
-
 
         {this.props.user ? (
           <button onClick={this.logout.bind(this)}>Sign Out</button>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Firebase from './../modules/Firebase';
 
 class Room extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class Room extends Component {
       newRoomError: ''
     });
 
-    this.roomsRef = this.props.firebase.database().ref('rooms');
+    this.roomsRef = Firebase.database().ref('rooms');
   }
 
   componentDidMount() {

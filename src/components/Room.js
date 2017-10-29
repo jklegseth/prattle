@@ -23,6 +23,10 @@ class Room extends Component {
     });
   }
 
+  componentWillUnmount() {
+    this.roomsRef.off();
+  }
+
   updateRoomName(e) {
     const roomName = e.target.value;
     const hasError = !!roomName ? false : this.state.hasError;
@@ -38,6 +42,7 @@ class Room extends Component {
   createRoom(e) {
     e.preventDefault();
     const roomName = this.state.newRoomName;
+    let pushedRef;
 
     if (!roomName) {
       return this.setState({
@@ -45,7 +50,7 @@ class Room extends Component {
         newRoomError: 'Please enter a name'
       });
     }
-    this.roomsRef.push({
+    pushedRef = this.roomsRef.push({
       name: roomName
     });
     this.setState({
@@ -53,6 +58,8 @@ class Room extends Component {
       hasError: false,
       newRoomError: ''
     });
+
+    this.props.setActiveRoom(pushedRef.getKey());
   }
 
   render() {

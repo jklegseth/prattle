@@ -34,6 +34,7 @@ class App extends Component {
   }
 
   setActiveRoom(roomId) {
+    if (roomId === this.state.activeRoom) return;
     this.setState({
       activeRoom: roomId
     });

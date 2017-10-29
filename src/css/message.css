@@ -1,4 +1,14 @@
 .message-list {
-  width: 40%;
   float: right;
+  list-style-type: none;
+  width: 40%;
+}
+
+.message-list-item {
+  border-bottom: 1px solid #bbb;
+  padding: 5px 0;
+}
+
+.message-send {
+  margin-top: 25px;
 }

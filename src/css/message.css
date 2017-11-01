@@ -28,11 +28,6 @@
   width: calc(100vw - 212px);
 }
 
-.is-small-screen .message-send {
-  margin-left: 0;
-  width: 100%;
-}
-
 .mdl-list__item-avatar,
 .mdl-list__item-avatar.material-icons {
   background-color: transparent;
@@ -69,4 +64,11 @@
 .mdl-list__item--three-line .mdl-list__item-primary-content {
   height: auto;
   min-height: 52px;
+}
+
+@media screen and (max-width: 1025px) {
+  .message-send {
+    margin-left: 0;
+    width: 100%;
+  }
 }

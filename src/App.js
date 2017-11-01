@@ -3,18 +3,8 @@ import './App.css';
 import Room from './components/Room';
 import Message from './components/Message';
 import User from './components/User';
-
-// Initialize Firebase
-// var config = {
-//   apiKey: "AIzaSyBpGsPJcfsHiSKgI-JTKHsWfLF7ql8XcpI",
-//   authDomain: "prattle-bde0b.firebaseapp.com",
-//   databaseURL: "https://prattle-bde0b.firebaseio.com",
-//   projectId: "prattle-bde0b",
-//   storageBucket: "prattle-bde0b.appspot.com",
-//   messagingSenderId: "891177641423"
-// };
-// firebase.initializeApp(config);
-
+import logo from './css/images/prattle-logo.png';
+import login from './css/images/login-bg.jpg';
 
 class App extends Component {
   constructor(props) {
@@ -24,12 +14,11 @@ class App extends Component {
       activeRoom: null,
       user: null
     });
-
-
   }
 
   setUser(user) {
     this.setState({
+      activeRoom: null,
       user: user
     });
   }
@@ -43,23 +32,45 @@ class App extends Component {
 
   render() {
     return (
-      <div className={'App' + (this.state.user ? ' logged-in' : ' logged-out')}>
-        <User
-          setUser={(isLoggedIn) => this.setUser(isLoggedIn)}
-          user={this.state.user}
-        ></User>
-      <div className="chatroom-container">
-          <Room
-
-            activeRoom={this.state.activeRoom}
-            setActiveRoom={(roomId) => this.setActiveRoom(roomId)}
-          ></Room>
-          <Message
-
-            activeRoom={this.state.activeRoom}
+      <div className={"mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header" + (this.state.user ? ' logged-in' : ' logged-out')}>
+        <header className="mdl-layout__header">
+          <div className="app-header mdl-layout__header-row">
+            <span className="mdl-layout-title">
+              <img src={logo} alt="Prattle" className="logo" />
+            </span>
+            <div className="mdl-layout-spacer"></div>
+          </div>
+          <User
+            setUser={(isLoggedIn) => this.setUser(isLoggedIn)}
             user={this.state.user}
-          ></Message>
+            ></User>
+        </header>
+          <div className="app-drawer mdl-layout__drawer">
+            <div className={this.state.user ? '' : ' hidden'}>
+              <Room
+                  activeRoom={this.state.activeRoom}
+                  setActiveRoom={(roomId) => this.setActiveRoom(roomId)}
+                  user={this.state.user}
+              ></Room>
+            </div>
         </div>
+        <main className="mdl-layout__content">
+          <div className="page-content">
+            <div className={'App' + (this.state.user ? ' logged-in' : ' logged-out')}>
+                <div className="chatroom-container">
+                  <Message
+                    activeRoom={this.state.activeRoom}
+                    user={this.state.user}
+                  ></Message>
+                </div>
+              {!this.state.user ? (
+                <div className="logged-out-bg">
+                  <img src={login} alt="Please log in" />
+                </div>
+              ) : null }
+            </div>
+          </div>
+        </main>
       </div>
     );
   }

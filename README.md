@@ -4,7 +4,7 @@
 
 Mostly a project to play with React and build something fun. Currently uses a Firebase backend with Google Auth.
 
-<img src="https://www.dropbox.com/s/vb5z2tpa01zunj2/Screenshot%202017-11-01%2010.56.41.png?raw=1" width="300">
+<img src="https://www.dropbox.com/s/vb5z2tpa01zunj2/Screenshot%202017-11-01%2010.56.41.png?raw=1" width="300" border="1">
 
 ### Todos and nice-to-haves
 
@@ -29,13 +29,16 @@ I'm not sure how much I'll do as this is a sandbox project and I need to get bac
 
 ### More screenshots
 
-<img src="https://www.dropbox.com/s/xgumw7r5f6sau3h/Screenshot%202017-11-01%2010.57.02.png?raw=1" width="300">
+<img src="https://www.dropbox.com/s/xgumw7r5f6sau3h/Screenshot%202017-11-01%2010.57.02.png?raw=1" width="300" border="1">
 
-<img src="https://www.dropbox.com/s/sn7cctk74kdg5fk/Screenshot%202017-11-01%2010.57.22.png?raw=1" width="300">
 
-<img src="https://www.dropbox.com/s/7mcni7y1z7h57gy/Screenshot%202017-11-01%2011.07.05.png?raw=1" width="300">
+<img src="https://www.dropbox.com/s/sn7cctk74kdg5fk/Screenshot%202017-11-01%2010.57.22.png?raw=1" width="300" border="1">
 
-<img src="https://www.dropbox.com/s/3meo79iwo36xs8o/Screenshot%202017-11-01%2011.07.21.png?raw=1" width="300">
+
+<img src="https://www.dropbox.com/s/7mcni7y1z7h57gy/Screenshot%202017-11-01%2011.07.05.png?raw=1" width="300" border="1">
+
+
+<img src="https://www.dropbox.com/s/3meo79iwo36xs8o/Screenshot%202017-11-01%2011.07.21.png?raw=1" width="300" border="1">
 
 
 

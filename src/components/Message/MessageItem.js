@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class MessageItem extends Component {
   constructor(props) {
@@ -51,5 +52,10 @@ class MessageItem extends Component {
     );
   }
 };
+
+MessageItem.propTypes = {
+  index: PropTypes.number.isRequired,
+  message: PropTypes.object.isRequired
+}
 
 export default MessageItem;

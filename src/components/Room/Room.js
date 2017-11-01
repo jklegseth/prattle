@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import AddRoom from './AddRoom';
 import Firebase from './../../modules/Firebase';
 
@@ -78,5 +79,11 @@ class Room extends Component {
   }
 
 };
+
+Room.propTypes = {
+  activeRoom: PropTypes.string,
+  setActiveRoom: PropTypes.func.isRequired,
+  user: PropTypes.object
+}
 
 export default Room;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import AddMessage from './AddMessage';
 import MessageItem from './MessageItem';
 import Firebase from './../../modules/Firebase';
@@ -53,6 +54,7 @@ class Message extends Component {
             {
               this.state.messages.map((message, index) =>
                 <MessageItem
+                  key={index}
                   index={index}
                   message={message}
                 ></MessageItem>
@@ -69,5 +71,10 @@ class Message extends Component {
     )
   }
 };
+
+Message.propTypes = {
+  activeRoom: PropTypes.string,
+  user: PropTypes.object
+}
 
 export default Message;

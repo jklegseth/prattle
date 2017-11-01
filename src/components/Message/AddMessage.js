@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Firebase from './../../modules/Firebase';
 
 class AddMessage extends Component {
@@ -55,5 +56,11 @@ class AddMessage extends Component {
     );
   }
 };
+
+AddMessage.propTypes = {
+  activeRoom: PropTypes.string,
+  scrollToBottom: PropTypes.func.isRequired,
+  user: PropTypes.object
+}
 
 export default AddMessage;

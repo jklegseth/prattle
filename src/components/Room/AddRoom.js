@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Firebase from './../../modules/Firebase';
 
 class AddRoom extends Component {
@@ -79,5 +80,11 @@ class AddRoom extends Component {
     )
   }
 };
+
+AddRoom.propTypes = {
+  formVisible: PropTypes.bool.isRequired,
+  hideForm: PropTypes.func.isRequired,
+  setActiveRoom: PropTypes.func.isRequired
+}
 
 export default AddRoom;

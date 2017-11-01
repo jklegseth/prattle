@@ -4,7 +4,6 @@ import Room from './components/Room/Room';
 import Message from './components/Message/Message';
 import User from './components/User';
 import logo from './css/images/prattle-logo.png';
-import login from './css/images/login-bg.jpg';
 
 class App extends Component {
   constructor(props) {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Firebase from './../modules/Firebase';
 
 class User extends Component {
@@ -35,6 +36,11 @@ class User extends Component {
       </div>
     );
   }
+}
+
+User.propTypes = {
+  setUser: PropTypes.func.isRequired,
+  user: PropTypes.object
 }
 
 export default User;

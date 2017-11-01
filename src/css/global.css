@@ -32,14 +32,6 @@ body {
   margin: 0 auto;
 }
 
-.mdl-layout__header .mdl-layout-title {
-  margin-left: 240px;
-}
-
-.is-small-screen .mdl-layout__header .mdl-layout-title {
-  margin-left: 0;
-}
-
 .app-drawer {
   padding-top: 25px;
 }
@@ -71,4 +63,10 @@ body {
 .logged-out-bg > img {
   max-width: 600px;
   width: 100%;
+}
+
+@media screen and (min-width: 1025px) {
+  .mdl-layout__header .mdl-layout-title {
+    margin-left: 240px;
+  }
 }

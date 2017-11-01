@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Room from './components/Room';
-import Message from './components/Message';
+import Room from './components/Room/Room';
+import Message from './components/Message/Message';
 import User from './components/User';
 import logo from './css/images/prattle-logo.png';
 import login from './css/images/login-bg.jpg';

@@ -28,6 +28,13 @@ body {
   /* says the height of the body must be at least 100% of window */
 }
 
+.logged-out .mdl-layout__content {
+  background: url('./images/login-bg.jpg') no-repeat 0 0;
+  background-size: 100% auto;
+  margin-left: 0;
+  max-width: 500px;
+}
+
 .app-header {
   margin: 0 auto;
 }
@@ -65,7 +72,16 @@ body {
   width: 100%;
 }
 
+.logged-out.mdl-layout--fixed-drawer>.mdl-layout__drawer {
+  transform: none;
+  width: 0;
+}
+
 @media screen and (min-width: 1025px) {
+  .logged-out .mdl-layout__header .mdl-layout-title {
+    margin-left: 0;
+  }
+
   .mdl-layout__header .mdl-layout-title {
     margin-left: 240px;
   }

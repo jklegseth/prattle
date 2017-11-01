@@ -57,17 +57,12 @@ class App extends Component {
         <main className="mdl-layout__content">
           <div className="page-content">
             <div className={'App' + (this.state.user ? ' logged-in' : ' logged-out')}>
-                <div className="chatroom-container">
-                  <Message
-                    activeRoom={this.state.activeRoom}
-                    user={this.state.user}
-                  ></Message>
-                </div>
-              {!this.state.user ? (
-                <div className="logged-out-bg">
-                  <img src={login} alt="Please log in" />
-                </div>
-              ) : null }
+              <div className="chatroom-container">
+                <Message
+                  activeRoom={this.state.activeRoom}
+                  user={this.state.user}
+                ></Message>
+              </div>
             </div>
           </div>
         </main>

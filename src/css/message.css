@@ -3,7 +3,14 @@
   height: calc(100vh - 190px);
   list-style-type: none;
   overflow: auto;
+  padding: 0 25px;
   width: 100%;
+}
+
+p.list-item,
+p.list-item > * {
+  height: auto !important;
+  white-space: normal;
 }
 
 .message-list-item {
@@ -21,49 +28,9 @@
   background: #f1f1f1;
   border-top: 1px solid #ddd;
   bottom: 0;
-  margin-top: 25px;
   position: fixed;
-  margin-left: -28px;
   padding: 10px 10px 10px 38px;
-  width: calc(100vw - 212px);
-}
-
-.mdl-list__item-avatar,
-.mdl-list__item-avatar.material-icons {
-  background-color: transparent;
-  background: url('./images/avatar.png') no-repeat 0 0;
-  font-size: 0;
-}
-
-.mdl-list__item--three-line .mdl-list__item-primary-content .mdl-list__item-avatar {
-  float: none;
-  left: 0;
-  position: absolute;
-  top: 3px;
-}
-
-.mdl-list__item-primary-content {
-  padding-left: 60px;
-  position: relative;
-}
-
-.mdl-list__item--three-line {
-  height: auto;
-  padding-right: 25px;
-  padding-bottom: 0;
-}
-
-.mdl-list__item--three-line .mdl-list__item-text-body {
-  height: auto;
-}
-
-.mdl-textfield {
   width: 100%;
-}
-
-.mdl-list__item--three-line .mdl-list__item-primary-content {
-  height: auto;
-  min-height: 52px;
 }
 
 @media screen and (max-width: 1025px) {

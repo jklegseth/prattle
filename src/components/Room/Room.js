@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import AddRoom from './AddRoom';
 import Firebase from './../../modules/Firebase';
 
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+
 class Room extends Component {
   constructor(props) {
     super(props);
@@ -45,14 +50,17 @@ class Room extends Component {
     return (
       <div className="room-list">
         <div className="room-list-title-bar">
-          <span className="mdl-layout-title">Rooms</span>
-          <button
-            className={"mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab room-list-add-toggle" + (this.state.formVisible ? ' hidden' : '')}
-            onClick={this.showForm}
-            title="Add room"
+          <span className="room-list-hdr">Rooms</span>
+            <FloatingActionButton
+              mini={true}
+              secondary={true}
+              onClick={this.showForm}
+              title="Add room"
+              className="room-list-add-toggle"
             >
-            <i className="material-icons">add</i>
-          </button>
+              <ContentAdd />
+            </FloatingActionButton>
+
         </div>
 
         <AddRoom
@@ -61,18 +69,19 @@ class Room extends Component {
           setActiveRoom={(key) => this.props.setActiveRoom(key)}
         ></AddRoom>
 
-      <nav className={"mdl-navigation" + (this.state.formVisible ? ' hidden' : '')}>
-          {
-            this.state.rooms.map(room =>
-              <a
-                key={room.key}
-                onClick={() => this.props.setActiveRoom(room.key)}
-                className={'mdl-navigation__link' + (this.props.activeRoom === room.key ? ' active' : '')}
-              >
-                {room.name}
-              </a>
-            )
-          }
+        <nav>
+          <Menu>
+            {
+              this.state.rooms.map(room =>
+                <MenuItem
+                  primaryText={room.name}
+                  key={room.key}
+                  onClick={() => this.props.setActiveRoom(room.key)}
+                  className={this.props.activeRoom === room.key ? ' active' : ''}
+                />
+              )
+            }
+          </Menu>
         </nav>
       </div>
     )

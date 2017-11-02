@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Firebase from './../modules/Firebase';
+import {RaisedButton, FlatButton} from 'material-ui';
 
 class User extends Component {
   componentWillMount() {
@@ -26,12 +27,9 @@ class User extends Component {
     return (
       <div className="user">
         {this.props.user ? (
-          <button className="mdl-button mdl-js-button" onClick={this.logout.bind(this)}>Sign Out</button>
+          <FlatButton label="Sign Out" style={{color: 'rgba(255, 255, 255, .9)'}} onClick={this.logout.bind(this)} />
         ) : (
-          <button
-            className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
-            onClick={this.login.bind(this)}
-          >Sign In</button>
+          <RaisedButton label="Sign In" secondary={true} onClick={this.login.bind(this)} />
         )}
       </div>
     );

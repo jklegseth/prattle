@@ -3,7 +3,6 @@
 }
 
 html {
-  background: url('./images/blah.jpg') no-repeat 0 0;
   height: 100%;
   /* makes sure our HTML takes up 100% of the browser windows */
   font-size: 100%;
@@ -28,61 +27,39 @@ body {
   /* says the height of the body must be at least 100% of window */
 }
 
-.logged-out .mdl-layout__content {
-  background: url('./images/login-bg.jpg') no-repeat 0 0;
-  background-size: 100% auto;
-  margin-left: 0;
-  max-width: 500px;
+.logged-out {
+  background: url('./images/blah.jpg') no-repeat 0 0;
+  height: 100vh;
 }
 
-.app-header {
-  margin: 0 auto;
+.logged-out > main {
+  background: url('./images/login-bg.jpg') no-repeat 0 0 / 90% auto;
+  height: 100vh;
+  max-width: 600px;
+  min-width: 400px;
+  width: 100%;
 }
 
-.app-drawer {
-  padding-top: 25px;
+.app-logo {
+  text-align: center;
+}
+
+.app-logo > img {
+  margin-top: -2px;
+  vertical-align: middle;
 }
 
 .logo {
   max-width: 170px;
 }
 
-.logged-out .chatroom-container,
-.logged-out .message-send {
-  height: 0;
-  visibility: hidden;
+.app-drawer {
+  position: relative;
 }
 
-.hidden,
-.logged-out .mdl-layout__drawer-button {
-  height: 0;
-}
-
-.logged-out.mdl-layout--fixed-drawer.is-upgraded:not(.is-small-screen)>.mdl-layout__header {
-  margin-left: 0;
-  width: 100%;
-}
-
-.logged-out-bg {
-  margin-left: -40px;
-}
-
-.logged-out-bg > img {
-  max-width: 600px;
-  width: 100%;
-}
-
-.logged-out.mdl-layout--fixed-drawer>.mdl-layout__drawer {
-  transform: none;
-  width: 0;
-}
-
-@media screen and (min-width: 1025px) {
-  .logged-out .mdl-layout__header .mdl-layout-title {
-    margin-left: 0;
-  }
-
-  .mdl-layout__header .mdl-layout-title {
-    margin-left: 240px;
-  }
+.app-drawer-close {
+  color: #999 !important;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Firebase from './../../modules/Firebase';
+import TextField from 'material-ui/TextField';
 
 class AddMessage extends Component {
   constructor(props) {
@@ -39,18 +40,17 @@ class AddMessage extends Component {
 
   render() {
     return (
-      <div className={"message-send" + (this.props.activeRoom ? '' : ' hidden')}>
+      <div className="message-send">
         <form>
-          <div className={"message-send-txt mdl-textfield mdl-js-textfield mdl-textfield--floating-label" + (this.state.hasError ? ' is-invalid' : '')}>
-            <textarea
-              rows= "3"
-              className="mdl-textfield__input"
-              type="text"
-              id="prattle"
-              onKeyDown={this.sendMessage.bind(this)}
-            />
-          <label className="mdl-textfield__label" htmlFor="prattle">Your prattle...</label>
-          </div>
+          <TextField
+            hintText="Message Field"
+            floatingLabelText="Your prattle..."
+            multiLine={true}
+            rows={3}
+            rowsMax={3}
+            fullWidth={true}
+            onKeyDown={this.sendMessage.bind(this)}
+          />
         </form>
       </div>
     );

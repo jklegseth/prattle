@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AddMessage from './AddMessage';
 import MessageItem from './MessageItem';
+import List from 'material-ui/List';
 import Firebase from './../../modules/Firebase';
 
 class Message extends Component {
@@ -50,17 +51,17 @@ class Message extends Component {
     return (
       <div>
         <div className="message-list" ref={(div) => { this.messageList = div; }}>
-          <ul className="mdl-list">
+          <List>
             {
               this.state.messages.map((message, index) =>
                 <MessageItem
                   key={index}
                   index={index}
                   message={message}
-                ></MessageItem>
+                />
               )
             }
-          </ul>
+          </List>
         </div>
         <AddMessage
           activeRoom={this.props.activeRoom}

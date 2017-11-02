@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { List, ListItem } from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+import Avatar from 'material-ui/Avatar';
+
+import avatar from './../../css/images/avatar.png';
+
 class MessageItem extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +30,7 @@ class MessageItem extends Component {
   }
 
   splitNewlines(message) {
+    console.log(message);
     return message.split('\n').map((line, index) => {
       return (
         <span key={index}>
@@ -36,19 +43,34 @@ class MessageItem extends Component {
 
   render() {
     const message = this.props.message;
+
     return (
-      <li key={this.props.index} className="mdl-list__item mdl-list__item--three-line">
-        <span className="mdl-list__item-primary-content">
-          <i className="message-list-avatar mdl-list__item-avatar material-icons">megaphone</i>
-          <span>
-            {message.username}
-            <span className="message-item-date">{this.convertTimestamp(message.submittedAt)}</span>
-          </span>
-          <span className="mdl-list__item-text-body">
-            { this.splitNewlines(message.content) }
-          </span>
-        </span>
-      </li>
+      <div>
+        <ListItem
+          disabled={true}
+          innerDivStyle={{height: 'auto'}}
+          nestedListStyle={{height: 'auto'}}
+          style={{height: 'auto'}}
+          key={this.props.index}
+          leftAvatar={
+            <span>
+              <Avatar src={avatar} />
+            </span>
+          }
+          primaryText={
+            <span>
+              {message.username}
+              <span className="message-item-date">{this.convertTimestamp(message.submittedAt)}</span>
+            </span>
+          }
+          secondaryText={
+            <p className="list-item">
+              { this.splitNewlines(message.content) }
+            </p>
+          }
+        />
+        <Divider inset={true} />
+      </div>
     );
   }
 };

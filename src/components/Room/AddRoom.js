@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Firebase from './../../modules/Firebase';
+import TextField from 'material-ui/TextField';
+import {RaisedButton, FlatButton} from 'material-ui';
 
 class AddRoom extends Component {
   constructor(props) {
@@ -50,32 +52,23 @@ class AddRoom extends Component {
   render() {
     return (
       <form
-        className={"room-list-add-form" + (this.props.formVisible ? '' : ' hidden')}
+        className="room-list-add-form"
         onSubmit={this.createRoom.bind(this)}
         onKeyDown={this.createRoom.bind(this)}
       >
-        <div className="mdl-textfield mdl-js-textfield">
-          <div className={"mdl-textfield mdl-js-textfield mdl-textfield--floating-label" + (this.state.hasError ? ' is-invalid' : '')}>
-            <input
-              className="room-list-add-txt mdl-textfield__input"
-              type="text"
-              id="roomName"
+        {this.props.formVisible ?
+          <div>
+            <TextField
+              floatingLabelText="Enter room name..."
               value={this.state.newRoomName}
               onChange={this.updateRoomName.bind(this)}
-              pattern="[A-Z,a-z]*"
-              />
-            <label className="mdl-textfield__label" htmlFor="roomName">Enter room name...</label>
+              id="addRoomForm"
+              fullWidth={true}
+           />
+            <RaisedButton label="Create" primary={true} fullWidth={true} />
+            <FlatButton label="Cancel" onClick={this.props.hideForm} fullWidth={true} />
           </div>
-        </div>
-        <button type="submit" className="room-list-add-btn mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-          Create
-        </button>
-        <button
-          className="room-list-add-cancel mdl-button mdl-js-button mdl-js-ripple-effect"
-          onClick={this.props.hideAddForm}
-          >
-          Cancel
-        </button>
+        : null }
       </form>
     )
   }

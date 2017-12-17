@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 
 import { ListItem } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
@@ -63,9 +64,7 @@ class MessageItem extends Component {
             </span>
           }
           secondaryText={
-            <p className="list-item">
-              { this.splitNewlines(message.content) }
-            </p>
+            <ReactMarkdown source={message.content} className="list-item" />
           }
         />
         <Divider inset={true} />

@@ -38,3 +38,8 @@
 .room-list-add-txt {
   padding-bottom: 0;
 }
+
+.room-list-item.active {
+  background: #2196F3 !important;
+  color: #fff !important;
+}

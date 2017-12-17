@@ -77,7 +77,7 @@ class Room extends Component {
                   primaryText={room.name}
                   key={room.key}
                   onClick={() => this.props.setActiveRoom(room.key)}
-                  className={this.props.activeRoom === room.key ? ' active' : ''}
+                  className={"room-list-item" + (this.props.activeRoom === room.key ? ' active' : '')}
                 />
               )
             }

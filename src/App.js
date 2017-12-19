@@ -5,7 +5,6 @@ import Message from './components/Message/Message';
 import User from './components/User';
 import logo from './css/images/prattle-logo.png';
 import {MuiThemeProvider, getMuiTheme} from 'material-ui/styles'
-import {deepOrangeA400, blueA700} from 'material-ui/styles/colors'
 import Drawer from 'material-ui/Drawer';
 import CloseIcon from 'material-ui/svg-icons/navigation/close';
 

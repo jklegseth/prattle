@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { List, ListItem } from 'material-ui/List';
+import { ListItem } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Avatar from 'material-ui/Avatar';
 
@@ -30,7 +30,6 @@ class MessageItem extends Component {
   }
 
   splitNewlines(message) {
-    console.log(message);
     return message.split('\n').map((line, index) => {
       return (
         <span key={index}>

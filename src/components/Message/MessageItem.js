@@ -39,10 +39,11 @@ class MessageItem extends Component {
         </span>
       )
     });
+    //return message.replace(/\n/g, '||');
   }
 
   render() {
-    const message = this.props.message;
+    const { message } = this.props;
 
     return (
       <div>
@@ -54,7 +55,7 @@ class MessageItem extends Component {
           key={this.props.index}
           leftAvatar={
             <span>
-              <Avatar src={avatar} />
+              <Avatar src={ (this.props.user && this.props.user.photoURL) ? this.props.user.photoURL : avatar } />
             </span>
           }
           primaryText={

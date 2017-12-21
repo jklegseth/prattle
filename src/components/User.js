@@ -27,7 +27,11 @@ class User extends Component {
     return (
       <div className="user">
         {this.props.user ? (
-          <FlatButton label="Sign Out" style={{color: 'rgba(255, 255, 255, .9)'}} onClick={this.logout.bind(this)} />
+          <div className="user__info">
+            <img className="user__avatar" src={ this.props.user ? this.props.user.photoURL : '' } alt="user" />
+            { this.props.user ? this.props.user.displayName.split(' ')[0] : 'Timid Tomato' }
+            <FlatButton label="Sign Out" style={{color: 'rgba(255, 255, 255, .9)'}} onClick={this.logout.bind(this)} />
+          </div>
         ) : (
           <RaisedButton label="Sign In" secondary={true} onClick={this.login.bind(this)} />
         )}

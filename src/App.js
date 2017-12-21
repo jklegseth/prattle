@@ -29,7 +29,7 @@ class App extends Component {
     this.state = ({
       activeRoom: null,
       user: null,
-      drawVisible: false,
+      drawerVisible: false,
       authChecked: false
     });
   }

@@ -26,6 +26,7 @@ class Message extends Component {
 
   componentWillReceiveProps(nextProps) {
     const roomId = nextProps.activeRoom;
+    if (roomId === this.props.activeRoom) { return; }
 
     this.setState({
       messages: []

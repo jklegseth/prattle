@@ -58,16 +58,19 @@ class Message extends Component {
                   key={index}
                   index={index}
                   message={message}
+                  user={this.props.user}
                 />
               )
             }
           </List>
         </div>
-        <AddMessage
-          activeRoom={this.props.activeRoom}
-          scrollToBottom={() => this.scrollToBottom}
-          user={this.props.user}
-        ></AddMessage>
+        { this.props.activeRoom &&
+          <AddMessage
+            activeRoom={this.props.activeRoom}
+            scrollToBottom={() => this.scrollToBottom}
+            user={this.props.user}
+          ></AddMessage>
+        }
       </div>
     )
   }

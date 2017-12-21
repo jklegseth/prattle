@@ -13,7 +13,6 @@ class MessageItem extends Component {
     super(props);
 
     this.convertTimestamp = this.convertTimestamp.bind(this);
-    this.splitNewlines = this.splitNewlines.bind(this);
   }
 
   convertTimestamp(ts) {
@@ -28,18 +27,6 @@ class MessageItem extends Component {
     formattedDate += hours > 12 ? ` ${hours % 12}:${minutes} PM` : ` ${hours}:${minutes} AM`;
 
     return formattedDate;
-  }
-
-  splitNewlines(message) {
-    return message.split('\n').map((line, index) => {
-      return (
-        <span key={index}>
-          {line}
-          <br />
-        </span>
-      )
-    });
-    //return message.replace(/\n/g, '||');
   }
 
   render() {

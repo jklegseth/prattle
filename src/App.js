@@ -98,14 +98,14 @@ class App extends Component {
           : null }
           <main>
             <div className="page-content">
-              {this.state.user ?
+              {this.state.user &&
                 <div className="chatroom-container">
                   <Message
                     activeRoom={this.state.activeRoom}
                     user={this.state.user}
                   ></Message>
                 </div>
-              : null }
+              }
             </div>
           </main>
         </div>

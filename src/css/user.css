@@ -3,3 +3,13 @@
   right: 10px;
   top: 10px;
 }
+
+.user__info {
+  color: #fff;
+}
+
+.user__avatar {
+  max-height: 45px;
+  vertical-align: middle;
+  margin-right: 10px;
+}

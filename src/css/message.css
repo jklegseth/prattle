@@ -33,6 +33,15 @@ p.list-item > * {
   width: 100%;
 }
 
+.message-send::before {
+  content: "Markdown enabled";
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 12px;
+  color: #bbb;
+}
+
 @media screen and (max-width: 1025px) {
   .message-send {
     margin-left: 0;

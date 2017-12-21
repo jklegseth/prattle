@@ -14,7 +14,7 @@ class AddMessage extends Component {
     this.messagesRef = Firebase.database().ref('messages');
   }
 
-  sendMessage(e) {
+  sendMessage = (e) => {
     if ((e.shiftKey || (e.type === 'keydown' && e.which !== 13))) return true;
     e.preventDefault();
     const message = e.target.value;
@@ -49,7 +49,7 @@ class AddMessage extends Component {
             rows={3}
             rowsMax={3}
             fullWidth={true}
-            onKeyDown={this.sendMessage.bind(this)}
+            onKeyDown={this.sendMessage}
           />
         </form>
       </div>
